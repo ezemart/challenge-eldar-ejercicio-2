@@ -12,6 +12,11 @@ public class TarjetaController {
     @Autowired
     private TarjetaService tarjetaService;
 
+    @GetMapping("/")
+    public String home() {
+        return "Bienvenido a la API de Tarjetas!";
+    }
+
     @GetMapping("/tasa")
     public ResponseEntity<Double> obtenerTasa(@RequestParam String marca, @RequestParam double importe) {
         try {
